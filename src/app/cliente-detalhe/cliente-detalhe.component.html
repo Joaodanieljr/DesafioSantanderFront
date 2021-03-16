@@ -1,0 +1,27 @@
+<div class = "example-container mat-elevation-z8">
+    <div class="example-loading-shade"
+         *ngIf="isLoadingResults">
+      <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    </div>
+    <div class="button-row">
+      <button mat-flat-button color="accent" [routerLink]="['/clientes']"><mat-icon>list</mat-icon> Voltar</button>
+    </div>
+    <mat-card class="example-card">
+     <mat-card-content>
+        <dl>
+          <dt>nome:</dt>
+          <dd>{{cliente.nome}}</dd>
+          <dt>email:</dt>
+          <dd>{{cliente.email}}</dd>
+          <dt>cpf:</dt>
+          <dd>{{cliente.cpf}}</dd>
+          <dt>Data Nascimento em:</dt>
+          <dd>{{cliente.dataNasc}}</dd>
+        </dl>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-flat-button color="primary" class="teste" [routerLink]="['/cliente-editar', cliente.id]"><mat-icon>edit</mat-icon> Editar</button>
+        <button mat-flat-button color="warn" (click)="deleteCliente(cliente.id)"><mat-icon>delete</mat-icon> Excluir</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
